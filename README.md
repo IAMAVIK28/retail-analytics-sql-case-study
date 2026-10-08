@@ -15,7 +15,7 @@ This project focuses on analyzing retail store data to uncover actionable busine
 
 ---
 
- Data Cleaning & Exploratory Data Analysis (EDA)
+1: Data Cleaning & Exploratory Data Analysis (EDA)
 -- Before jumping into the business metrics, we check for missing values, duplicates, 
 -- or data integrity issues across our tables:
 
@@ -32,7 +32,7 @@ SELECT 'Sales', COUNT(*) FROM sales_transaction;
 
 
 
- 1: Customer Segmentation 
+ 2: Customer Segmentation 
     Segmented customers based on their total purchase quantities into categories (`No Orders`, `Low`, `Mid`, `High Value`).
 
 SELECT 
@@ -48,7 +48,7 @@ FROM customer_profiles c
 LEFT JOIN sales_transaction s ON c.CustomerID = s.CustomerID
 GROUP BY c.CustomerID;
 
-2: Identify High and Low Sales Products.
+3: Identify High and Low Sales Products.
   This query calculates total units sold and revenue for each product to find top performers and laggards:
 
  SELECT 
@@ -62,7 +62,7 @@ LEFT JOIN sales_transaction s ON p.ProductID = s.ProductID
 GROUP BY p.ProductID, p.ProductName, p.Category
 ORDER BY TotalUnitsSold DESC;
 
-3: Customer Behavior & Repeat Purchases (Loyalty Analysis)To analyze repeat customer behavior 
+4: Customer Behavior & Repeat Purchases (Loyalty Analysis)To analyze repeat customer behavior 
    and identify loyal buyers based on frequency of transactions:   
 
 SELECT 
